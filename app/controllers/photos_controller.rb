@@ -58,7 +58,11 @@ class PhotosController < ApplicationController
 
   def liked
     @user = User.find_by!(username: params.fetch(:username))
-  end  
+  end
+  
+  def feed
+    @user = User.find_by!(username: params.fetch(:username))
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
