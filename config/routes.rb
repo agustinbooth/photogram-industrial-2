@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root "photos#index"
 
+  # get "/users/:id" => "user#show", as: :user
+
   devise_for :users
 
+  resources :users, only: :show
   resources :likes
   resources :follow_requests
   resources :comments
